@@ -37,13 +37,13 @@ public class RoleController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public String post(@RequestBody RoleDao roleDto) throws Exception {
-        Optional<Role> optional = service.getRoleByName(roleDto.getName());
+    public String post(@RequestBody RoleDao roleDao) throws Exception {
+        Optional<Role> optional = service.getRoleByName(roleDao.getName());
         if (optional.isPresent()) {
             throw new Exception("Role Already Exist.");
         }
 
-        Role role = new Role(roleDto.getName());
+        Role role = new Role(roleDao.getName());
         service.saveRole(role);
         return "Saved role id - " + role.getId();
     }
