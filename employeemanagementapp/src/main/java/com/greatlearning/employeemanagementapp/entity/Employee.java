@@ -1,4 +1,4 @@
-package com.greatlearning.employeemanagementapp.model;
+package com.greatlearning.employeemanagementapp.entity;
 
 import java.util.Objects;
 

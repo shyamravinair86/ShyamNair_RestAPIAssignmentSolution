@@ -3,7 +3,7 @@ package com.greatlearning.employeemanagementapp.implementation;
 import java.util.List;
 import java.util.Optional;
 
-import com.greatlearning.employeemanagementapp.model.User;
+import com.greatlearning.employeemanagementapp.entity.User;
 import com.greatlearning.employeemanagementapp.repository.UserRepository;
 import com.greatlearning.employeemanagementapp.service.UserService;
 

@@ -1,13 +1,13 @@
-package com.greatlearning.employeemanagementapp.dto;
+package com.greatlearning.employeemanagementapp.dao;
 
-public class EmployeeDto {
+public class EmployeeDao {
 
 	Long id;
     String firstName;
     String lastName;
     String email;
     
-	public EmployeeDto(Long id, String firstName, String lastName, String email) {
+	public EmployeeDao(Long id, String firstName, String lastName, String email) {
 		super();
 		this.id = id;
 		this.firstName = firstName;

@@ -1,4 +1,4 @@
-package com.greatlearning.employeemanagementapp.model;
+package com.greatlearning.employeemanagementapp.entity;
 
 import java.util.Objects;
 
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.greatlearning.employeemanagementapp.model.Role;
+import com.greatlearning.employeemanagementapp.entity.Role;
 
 @Entity
 @Table(name = "roles", uniqueConstraints = @UniqueConstraint(columnNames = { "name" }))

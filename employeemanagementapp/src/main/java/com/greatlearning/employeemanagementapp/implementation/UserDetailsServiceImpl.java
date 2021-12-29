@@ -1,6 +1,6 @@
 package com.greatlearning.employeemanagementapp.implementation;
 
-import com.greatlearning.employeemanagementapp.model.User;
+import com.greatlearning.employeemanagementapp.entity.User;
 import com.greatlearning.employeemanagementapp.repository.UserRepository;
 import com.greatlearning.employeemanagementapp.security.MyUserDetails;
 

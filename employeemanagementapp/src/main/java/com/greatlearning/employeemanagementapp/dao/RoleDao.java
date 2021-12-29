@@ -1,14 +1,14 @@
-package com.greatlearning.employeemanagementapp.dto;
+package com.greatlearning.employeemanagementapp.dao;
 
-public class RoleDto {
+public class RoleDao {
 
     String name;
     
-    public RoleDto() {
+    public RoleDao() {
     	
     }
     
-    public RoleDto(String name) {
+    public RoleDao(String name) {
 		super();
 		this.name = name;
 	}

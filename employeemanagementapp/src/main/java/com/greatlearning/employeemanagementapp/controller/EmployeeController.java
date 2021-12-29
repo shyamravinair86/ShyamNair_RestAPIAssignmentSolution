@@ -3,8 +3,8 @@ package com.greatlearning.employeemanagementapp.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.greatlearning.employeemanagementapp.dto.EmployeeDto;
-import com.greatlearning.employeemanagementapp.model.Employee;
+import com.greatlearning.employeemanagementapp.dao.EmployeeDao;
+import com.greatlearning.employeemanagementapp.entity.Employee;
 import com.greatlearning.employeemanagementapp.service.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,28 +51,28 @@ public class EmployeeController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public String post(@RequestBody EmployeeDto employeeDto) throws Exception {
-        Optional<Employee> optional = service.getEmployeeByEmail(employeeDto.getEmail());
+    public String post(@RequestBody EmployeeDao employeeDao) throws Exception {
+        Optional<Employee> optional = service.getEmployeeByEmail(employeeDao.getEmail());
         if (optional.isPresent()) {
             throw new Exception("Employee Already Exist.");
         }
 
-        Employee employee = new Employee(employeeDto.getFirstName(), employeeDto.getLastName(), employeeDto.getEmail());
+        Employee employee = new Employee(employeeDao.getFirstName(), employeeDao.getLastName(), employeeDao.getEmail());
         service.saveEmployee(employee);
         return "Saved employee id - " + employee.getId();
     }
 
     @PutMapping
-    public Employee put(@RequestBody EmployeeDto employeeDto) {
+    public Employee put(@RequestBody EmployeeDao employeeDao) {
         Employee employee = new Employee();
-        Optional<Employee> optional = service.getEmployeeById(employeeDto.getId());
+        Optional<Employee> optional = service.getEmployeeById(employeeDao.getId());
         if (optional.isPresent()) {
             employee = optional.get();
-            employee.setFirstName(employeeDto.getFirstName());
-            employee.setLastName(employeeDto.getLastName());
-            employee.setEmail(employeeDto.getEmail());
+            employee.setFirstName(employeeDao.getFirstName());
+            employee.setLastName(employeeDao.getLastName());
+            employee.setEmail(employeeDao.getEmail());
         } else {
-            employee = new Employee(employeeDto.getFirstName(), employeeDto.getLastName(), employeeDto.getEmail());
+            employee = new Employee(employeeDao.getFirstName(), employeeDao.getLastName(), employeeDao.getEmail());
         }
         service.saveEmployee(employee);
         return employee;

@@ -3,7 +3,7 @@ package com.greatlearning.employeemanagementapp.implementation;
 import java.util.List;
 import java.util.Optional;
 
-import com.greatlearning.employeemanagementapp.model.Role;
+import com.greatlearning.employeemanagementapp.entity.Role;
 import com.greatlearning.employeemanagementapp.repository.RoleRepository;
 import com.greatlearning.employeemanagementapp.service.RoleService;
 

@@ -1,16 +1,16 @@
-package com.greatlearning.employeemanagementapp.dto;
+package com.greatlearning.employeemanagementapp.dao;
 
 import java.util.ArrayList;
 
-import com.greatlearning.employeemanagementapp.model.Role;
+import com.greatlearning.employeemanagementapp.entity.Role;
 
-public class UserDto {
+public class UserDao {
 
     String username;
     String password;
     ArrayList<Role> roles;
 	
-    public UserDto(String username, String password, ArrayList<Role> roles) {
+    public UserDao(String username, String password, ArrayList<Role> roles) {
 		super();
 		this.username = username;
 		this.password = password;

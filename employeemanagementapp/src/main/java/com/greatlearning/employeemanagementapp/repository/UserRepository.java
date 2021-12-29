@@ -1,9 +1,9 @@
 package com.greatlearning.employeemanagementapp.repository;
 
-import com.greatlearning.employeemanagementapp.model.User;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import com.greatlearning.employeemanagementapp.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 

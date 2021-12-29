@@ -3,9 +3,9 @@ package com.greatlearning.employeemanagementapp.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.greatlearning.employeemanagementapp.model.Employee;
-
 import org.springframework.data.domain.Sort.Direction;
+
+import com.greatlearning.employeemanagementapp.entity.Employee;
 
 public interface EmployeeService {
 

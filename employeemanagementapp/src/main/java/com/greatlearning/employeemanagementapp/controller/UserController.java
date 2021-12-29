@@ -1,8 +1,8 @@
 package com.greatlearning.employeemanagementapp.controller;
 
-import com.greatlearning.employeemanagementapp.dto.UserDto;
-import com.greatlearning.employeemanagementapp.model.Role;
-import com.greatlearning.employeemanagementapp.model.User;
+import com.greatlearning.employeemanagementapp.dao.UserDao;
+import com.greatlearning.employeemanagementapp.entity.Role;
+import com.greatlearning.employeemanagementapp.entity.User;
 import com.greatlearning.employeemanagementapp.service.RoleService;
 import com.greatlearning.employeemanagementapp.service.UserService;
 
@@ -42,13 +42,13 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public String post(@RequestBody UserDto userDto) throws Exception {
-        Optional<User> optional = userService.getUserByUsername(userDto.getUsername());
+    public String post(@RequestBody UserDao userDao) throws Exception {
+        Optional<User> optional = userService.getUserByUsername(userDao.getUsername());
         if (optional.isPresent()) {
             throw new Exception("User Already Exist.");
         }
-        User user = new User(userDto.getUsername(), userDto.getPassword(), userDto.getRoles());
-        for (Role role : userDto.getRoles()) {
+        User user = new User(userDao.getUsername(), userDao.getPassword(), userDao.getRoles());
+        for (Role role : userDao.getRoles()) {
             Optional<Role> rOptional = roleService.getRoleById(role.getId());
             if (rOptional.isEmpty()) {
                 throw new Exception("Role Not Found.");

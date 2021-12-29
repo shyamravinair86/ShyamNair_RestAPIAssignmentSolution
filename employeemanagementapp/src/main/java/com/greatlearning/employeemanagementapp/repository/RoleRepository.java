@@ -1,9 +1,9 @@
 package com.greatlearning.employeemanagementapp.repository;
 
-import com.greatlearning.employeemanagementapp.model.Role;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import com.greatlearning.employeemanagementapp.entity.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {
 

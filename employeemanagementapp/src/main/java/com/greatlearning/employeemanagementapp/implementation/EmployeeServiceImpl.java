@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.greatlearning.employeemanagementapp.model.Employee;
+import com.greatlearning.employeemanagementapp.entity.Employee;
 import com.greatlearning.employeemanagementapp.repository.EmployeeRepository;
 import com.greatlearning.employeemanagementapp.service.EmployeeService;
 

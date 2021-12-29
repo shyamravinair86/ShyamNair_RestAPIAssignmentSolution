@@ -3,8 +3,8 @@ package com.greatlearning.employeemanagementapp.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.greatlearning.employeemanagementapp.dto.RoleDto;
-import com.greatlearning.employeemanagementapp.model.Role;
+import com.greatlearning.employeemanagementapp.dao.RoleDao;
+import com.greatlearning.employeemanagementapp.entity.Role;
 import com.greatlearning.employeemanagementapp.service.RoleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class RoleController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public String post(@RequestBody RoleDto roleDto) throws Exception {
+    public String post(@RequestBody RoleDao roleDto) throws Exception {
         Optional<Role> optional = service.getRoleByName(roleDto.getName());
         if (optional.isPresent()) {
             throw new Exception("Role Already Exist.");

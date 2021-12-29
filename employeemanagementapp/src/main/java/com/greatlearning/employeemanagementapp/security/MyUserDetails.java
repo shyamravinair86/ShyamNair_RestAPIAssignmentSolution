@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.greatlearning.employeemanagementapp.model.Role;
-import com.greatlearning.employeemanagementapp.model.User;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.greatlearning.employeemanagementapp.entity.Role;
+import com.greatlearning.employeemanagementapp.entity.User;
 
 public class MyUserDetails implements UserDetails {
 
